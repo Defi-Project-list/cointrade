@@ -20,19 +20,18 @@ app.use(express.urlencoded({ extended: true }));
 
 // Custom Middleware
 
-// app.use(async (req, res, next) => {
-//   req.context = {
-//     models,
-//     me: await models.User.findByLogin('rwieruch'),
-//   };
-//   next();
-// });
+app.use(async (req, res, next) => {
+  req.context = {
+    models,
+    me: await models.User.findByLogin('jerry'),
+  };
+  next();
+});
 
 // * Routes * //
 
-app.use('/session', routes.session);
 app.use('/user', routes.user);
-app.use('/messages', routes.message);
+app.use('/fund', routes.fund);
 
 // * Start * //
 
@@ -42,10 +41,10 @@ connectDb().then(async () => {
   if (eraseDatabaseOnSync) {
     await Promise.all([
       models.User.deleteMany({}),
-      models.Message.deleteMany({}),
+      models.Fund.deleteMany({}),
     ]);
 
-    createUsersWithMessages();
+    createUsersWithFunds();
   }
 
   app.listen(process.env.PORT, () =>
@@ -55,33 +54,35 @@ connectDb().then(async () => {
 
 // * Database Seeding * //
 
-const createUsersWithMessages = async () => {
+const createUsersWithFunds = async () => {
   const user1 = new models.User({
-    username: 'rwieruch',
+    username: 'jerry',
   });
 
   const user2 = new models.User({
     username: 'ddavids',
   });
 
-  const message1 = new models.Message({
-    text: 'Published the Road to learn React',
-    user: user1.id,
+  const fund1 = new models.Fund({
+    name: 'fund1',
+    assets: {
+      BTC: 0.5,
+      ETH: 0.5
+    },
+    users: [user1.id],
+  });
+  const fund2 = new models.Fund({
+    name: 'fund2',
+    users: [user1.id],
+  });
+  const fund3 = new models.Fund({
+    name: 'fund3',
+    users: [user1.id],
   });
 
-  const message2 = new models.Message({
-    text: 'Happy to release ...',
-    user: user2.id,
-  });
-
-  const message3 = new models.Message({
-    text: 'Published a complete ...',
-    user: user2.id,
-  });
-
-  await message1.save();
-  await message2.save();
-  await message3.save();
+  await fund1.save();
+  await fund2.save();
+  await fund3.save();
 
   await user1.save();
   await user2.save();

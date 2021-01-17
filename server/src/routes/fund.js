@@ -37,6 +37,7 @@ router.get('/:fundName', async (req, res) => {
   const ret = {
     id: fund.id,
     name: fund.name,
+    createdBy: fund.createdBy,
     assets: fund.assets,
     description: fund.description,
     imageUrl: fund.imageUrl,
@@ -53,6 +54,7 @@ router.post('/:fundName/create', async (req, res) => {
   const fund = new req.context.models.Fund({
     name: req.params.fundName,
     assets: req.body.assets,
+    createdBy: req.body.createdBy,
     description: req.body.description,
     imageUrl: req.body.imageUrl,
   });

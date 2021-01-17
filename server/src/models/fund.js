@@ -5,6 +5,7 @@ const fundSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  createdBy: String,
   description: String,
   imageUrl: String,
   assets: {} ,

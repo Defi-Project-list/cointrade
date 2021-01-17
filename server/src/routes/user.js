@@ -30,7 +30,7 @@ router.get('/:username', async (req, res) => {
   const ret = {
     id: user.id,
     username: user.username,
-    freeCoin: user.freeCoin,
+    balance: user.balance,
   }
   return res.send(ret);
 });
@@ -38,12 +38,29 @@ router.get('/:username', async (req, res) => {
 /*
  * Creates a user user
  * Query Params: None
- * POST /user/testuser1/create?api-key=<apikey>&api-secret=<secretkey>
+ * POST /user/testuser1/create
  */
 router.post('/:username/create', async (req, res) => {
   const user = new req.context.models.User({
     username: req.params.username,
+    binance: {
+      apiKey: req.body.apiKey,
+      apiSecret: req.body.apiSecret,
+    },
+    balance: 0,
   });
+  const binance = new Binance({
+    apiKey: user.binance.apiKey,
+    apiSecret: user.binance.apiSecret,
+  })
+  const accountInfo = await binance.accountInfo()
+
+  accountInfo.balances.forEach(balance => {
+    if (balance.asset === 'USDT') {
+      user.balance = balance.free
+    }
+  })
+
   try {
     await user.save()
     return res.send(user);
@@ -100,13 +117,13 @@ router.post('/:username/invest', async (req, res) => {
     return res.status(400).send(`User ${req.params.username} has not set api keys`);
   } else if (!fund) {
     return res.status(400).send(`Fund ${req.query.fund} not found`);
-  } else if (quantity > user.freeCoin) {
+  } else if (quantity > user.balance) {
     return res.status(400).send(`Not enough USDT in account`);
   }
 
   const binance = new Binance({
-    apiKey: process.env.API_KEY,
-    apiSecret: process.env.API_SECRET,
+    apiKey: user.binance.apiKey,
+    apiSecret: user.binance.apiSecret,
   })
   try {
     for (const [coin, share] of Object.entries(fund.assets)) {
@@ -119,11 +136,16 @@ router.post('/:username/invest', async (req, res) => {
       console.log(order)
       await binance.order(order)
     }
+    user.balance -= quantity
+    await user.save()
   } catch (e) {
     console.error(e);
+    return res.status(400).send(e)
   }
+
   let ret = "Transaction Succeeded"
   return res.send(ret);
+
 });
 
 export default router;

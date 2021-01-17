@@ -17,9 +17,13 @@
     "nodemon": "^2.0.3"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "binance-api-node": "^0.10.19",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.10"
+    "mongoose": "^5.9.10",
+    "node-binance-api": "^0.12.4"
   }
 }

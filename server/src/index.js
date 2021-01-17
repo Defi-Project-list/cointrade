@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(async (req, res, next) => {
   req.context = {
     models,
-    me: await models.User.findByLogin('jerry'),
+    me: await models.User.find({ username: 'jerry'}),
   };
   next();
 });
@@ -57,10 +57,20 @@ connectDb().then(async () => {
 const createUsersWithFunds = async () => {
   const user1 = new models.User({
     username: 'jerry',
+    binance: {
+      apiKey: process.env.API_KEY,
+      apiSecret: process.env.API_SECRET,
+    },
+    freeCoin: 10000,
   });
 
   const user2 = new models.User({
-    username: 'ddavids',
+    username: 'robert',
+    binance: {
+      apiKey: 'test',
+      secretKey: 'test'
+    },
+    freeCoin: 10000,
   });
 
   const fund1 = new models.Fund({
@@ -79,6 +89,8 @@ const createUsersWithFunds = async () => {
     name: 'fund3',
     users: [user1.id],
   });
+
+  user1.funds.push(fund1, fund2, fund3);
 
   await fund1.save();
   await fund2.save();

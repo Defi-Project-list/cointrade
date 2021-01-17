@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar";
 import FundViewAmountInput from "./FundViewAmountInput";
 import FundViewBuyButton from "./FundViewBuyButton";
 import FundViewSellButton from "./FundViewSellButton";
+import LineChart from "./LineChart";
 import styles from "./FundView.module.scss";
 
 const FundView = ({
@@ -41,10 +42,11 @@ const FundView = ({
                 <p className={styles.fundViewPortfolio}>
                     {fundViewPortfolio}
                 </p>
-                <img
-                    alt=""
-                    src="https://static.overlay-tech.com/assets/b127b8c8-15c7-411a-97aa-2a06498ecf85.png"
-                />
+                {/*<img*/}
+                {/*    alt=""*/}
+                {/*    src="https://static.overlay-tech.com/assets/b127b8c8-15c7-411a-97aa-2a06498ecf85.png"*/}
+                {/*/>*/}
+                <LineChart />
                 <p className={styles.fundViewCurrentValue}>
                     {amountToBuySell}
                 </p>

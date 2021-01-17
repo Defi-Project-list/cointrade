@@ -8,7 +8,7 @@ import styles from "./MyAccount.module.scss";
 
 const MyAccount = ({
                        myAccountTitle = "My Account",
-                       myAccountProfitText1 = "Portfolio profit (all-time): +5.22%",
+                       myAccountProfitText1 = "Portfolio profit (all-time):",
                        myAccountInvestmentTitle = "Investments",
                        myAccountInvestmentTest1 = "BIT50: 100 USDT",
                        myAccountInvestmentText2 = "Fund2: 150 USDT",
@@ -23,6 +23,9 @@ const MyAccount = ({
                 </p>
                 <p className={styles.myAccountProfitText1}>
                     {myAccountProfitText1}
+                </p>
+                <p className={styles.myAccountProfitText2}>
+                    {myAccountProfitText2}
                 </p>
                 <p className={styles.myAccountInvestmentTitle}>
                     {myAccountInvestmentTitle}

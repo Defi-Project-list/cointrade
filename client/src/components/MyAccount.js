@@ -10,8 +10,8 @@ const MyAccount = ({
                        myAccountTitle = "My Account",
                        myAccountProfitText1 = "Portfolio profit (all-time):",
                        myAccountInvestmentTitle = "Investments",
-                       myAccountInvestmentTest1 = "BIT50: 100 USDT",
-                       myAccountInvestmentText2 = "Fund2: 150 USDT",
+                       myAccountInvestmentTest1 = "FBIT: 100 USDT",
+                       myAccountInvestmentText2 = "MED: 150 USDT",
                        myAccountProfitText2 = "+5.22%"
                    }) => {
     console.log(localStorage.getItem('user'));

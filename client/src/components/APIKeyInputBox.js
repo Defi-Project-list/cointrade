@@ -12,7 +12,7 @@ class APIKeyInputBox extends React.Component {
     }
 
     onInput(e) {
-        this.props.parentObject.onUsernameEdit(e.target.value);
+        this.props.parentObject.onAPIKeyEdit(e.target.value);
     }
 
     render() {

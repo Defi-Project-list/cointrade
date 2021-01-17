@@ -9,7 +9,13 @@ import styles from "./HowTo.module.scss";
 const HowTo = ({
                    howToTitle = "How to Create Your Own Fund",
                    howToSubtitle = "This guide demonstrates how to build a Python program which obtains price + volume data and executes trades.",
-                   howToFigure1Desc = "Figure 1. blah blah blah"
+                   howToTitle2 = "Disclaimer",
+                   howToSubtitle2 = "Please be advised that your fund must be open-source. We will request a link to your repository. This is for the sake of transparency with investors.",
+                   howToTitle3 = "Let's get started!",
+                   howToSubtitle3 = "First, go to the section on our website called Create Fund. This will allow you to set up the details on your fund name and ticker. Click Next to receive your API key.",
+
+
+                   howToFigure1Desc = "Figure 1. Who says that cryptocurrency has to be difficult to invest in?"
                }) => {
     return (
         <div className={styles.howTo}>
@@ -19,10 +25,18 @@ const HowTo = ({
                 <p className={styles.howToSubtitle}>
                     {howToSubtitle}
                 </p>
+                <p className={styles.howToTitle}>{howToTitle2}</p>
+                <p className={styles.howToSubtitle}>
+                    {howToSubtitle2}
+                </p>
+                <p className={styles.howToTitle}>{howToTitle3}</p>
+                <p className={styles.howToSubtitle}>
+                    {howToSubtitle3}
+                </p>
                 <img
                     alt=""
                     className={styles.howToFigure1}
-                    src="https://static.overlay-tech.com/assets/ab577a45-2a37-4dcb-948d-c4713164b1e4.png"
+                    src="https://assets.entrepreneur.com/content/3x2/2000/20191217200727-6Crypto.jpeg"
                 />
                 <p className={styles.howToFigure1Desc}>
                     {howToFigure1Desc}

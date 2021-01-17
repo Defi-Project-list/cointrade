@@ -2,16 +2,35 @@ import React from "react";
 import styles from "./NextButton.module.scss";
 import {Link} from "react-router-dom";
 
-const NextButton = ({ nextButtonText = "Next" }) => {
-    return (
-        <Link to="/createfund2" className={styles.nextButtonText}>
+class NextButton extends React.Component {
+    constructor (props){
+        super(props);
+        this.state = {};
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.props.parentObject.onSubmit();
+    }
+
+    render() {
+        let nextButtonText = "Next";
+        return (
+            <Link to="/createfund2?optionid=94856510" className={styles.nextButtonText}>
             <div className={styles.nextButton}>
-                <p className={styles.nextButtonText}>
-                    {nextButtonText}
-                </p>
+                <span className={styles.nextButtonText}>
+                    <p className={styles.nextButtonText}>{nextButtonText}</p>
+                </span>
             </div>
-        </Link>
-    );
-};
+            {/*<div className={styles.nextButton} onClick={this.handleClick}>*/}
+            {/*    <p className={styles.nextButtonText}>*/}
+            {/*        {nextButtonText}*/}
+            {/*    </p>*/}
+            {/*</div>*/}
+            </Link>
+        );
+    }
+}
 
 export default NextButton;

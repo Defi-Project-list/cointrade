@@ -1,31 +1,43 @@
 import React from "react";
 import styles from "./FundCard.module.scss";
+import {Link} from "react-router-dom";
 
-const FundCard = ({
-                      fundCardName = "BIT50",
-                      fundCardPercentGain = "5.22%",
-                      funCardAuthor = "by user1"
-                  }) => {
-    return (
-        <div className={styles.fundCard}>
-            <img
-                alt=""
-                className={styles.fundCardLogo}
-                src="https://static.overlay-tech.com/assets/58f86d52-1d8e-4d15-9cb7-05ca41f7be37.png"
-            />
-            <div className={styles.flexWrapperOne}>
-                <p className={styles.fundCardName}>
-                    {fundCardName}
-                </p>
-                <p className={styles.fundCardPercentGain}>
-                    {fundCardPercentGain}
+class FundCard extends React.Component {
+    constructor (props){
+        super(props);
+
+        this.state = {
+        };
+    }
+
+    render() {
+        let fundCardName = this.props.fundName;
+        let fundCardPercentGain = this.props.percentGain;
+        let funCardAuthor = this.props.author;
+        let imageSrc = this.props.imageSrc;
+        return (
+            <div className={styles.fundCard}>
+                <img
+                    alt=""
+                    className={styles.fundCardLogo}
+                    src={imageSrc}
+                />
+                <div className={styles.flexWrapperOne}>
+                    <Link to="/fundview" className={styles.fundCardName}>
+                        <p className={styles.fundCardName}>
+                            {fundCardName}
+                        </p>
+                    </Link>
+                    <p className={styles.fundCardPercentGain}>
+                        {fundCardPercentGain}
+                    </p>
+                </div>
+                <p className={styles.funCardAuthor}>
+                    {funCardAuthor}
                 </p>
             </div>
-            <p className={styles.funCardAuthor}>
-                {funCardAuthor}
-            </p>
-        </div>
-    );
-};
+        );
+    }
+}
 
 export default FundCard;

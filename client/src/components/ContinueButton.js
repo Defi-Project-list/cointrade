@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ContinueButton.module.scss";
+import {Link} from "react-router-dom";
 
 class ContinueButton extends React.Component {
     constructor (props){
@@ -16,12 +17,15 @@ class ContinueButton extends React.Component {
     render() {
         let continueButtonText = "Continue";
         return (
-            <div className={styles.continueButton} onClick={this.handleClick}>
-                <p className={styles.continueButtonText}>
-                    {continueButtonText}
-                </p>
-            </div>
-            // </Link>
+            //
+                <div className={styles.continueButton}>
+                    <Link to="/invest" className={styles.continueButtonText}>
+                    <p className={styles.continueButtonText}>
+                        {continueButtonText}
+                    </p>
+                    </Link>
+                </div>
+            //
         );
     }
 }

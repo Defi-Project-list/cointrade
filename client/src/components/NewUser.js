@@ -18,37 +18,40 @@ class NewUser extends React.Component {
     }
 
     onUsernameEdit(value) {
-        console.log(value);
+        // console.log(value);
         this.setState({username: value});
     }
 
     onAPIKeyEdit(value) {
-        console.log(value);
+        // console.log(value);
         this.setState({apiKey: value});
     }
 
     onAPISecretKeyEdit(value) {
-        console.log(value);
+        // console.log(value);
         this.setState({apiSecretKey: value});
     }
 
     onSubmit() {
         console.log(this.state.username);
 
-        // async function getTitles() {
-        //     var name = React.findDOMNode(this.refs.usernameInput).value;
-        //
-        //     await axios.get(`http://backend-env-2.eba-u2jthmpx.us-east-2.elasticbeanstalk.com/get_featured`, {
-        //         headers: {
-        //             'Content-Type': undefined
-        //         }
-        //     }).then(res => {
-        //         res.data.forEach(element => img_titles.push(element["name"]))
-        //         console.log(img_titles)
-        //     })
-        //
-        //     return img_titles
-        // }
+        axios.get("http://cd13c44f14ab.ngrok.io/" + this.state.username + "/create", {
+            headers: {
+                'Content-Type': undefined
+            },
+            apiKey: this.state.apiKey,
+            apiSecret: this.state.apiSecretKey
+        }).then(res => {
+            localStorage.setItem('user', this.username);
+            window.open("/invest");
+            console.log("New user uccess!")
+        }).catch(function (error) {
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+            }
+        });
     }
 
     render() {

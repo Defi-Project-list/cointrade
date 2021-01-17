@@ -13,6 +13,8 @@
 .fundCardLogo {
   margin-bottom: 25px;
   margin-left: 20px;
+  width:200px;
+  height: 150px;
 }
 .flexWrapperOne {
   margin-bottom: 5px;
@@ -23,6 +25,7 @@
   @include foundation.roboto-normal-regular-24;
   color: foundation.$text-black;
   margin-right: 34px;
+  text-decoration: none;
 }
 .fundCardPercentGain {
   @include foundation.roboto-normal-regular-24;

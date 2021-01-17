@@ -1,17 +1,27 @@
 import React from "react";
 import styles from "./CreateFundDescriptionInput.module.scss";
 
-const CreateFundDescriptionInput = ({
-                                        createFundDescriptionInputText = "This fund uses RSI and MACD to strategically invest in supply<br /> chain crypto..."
-                                    }) => {
-    return (
-        <textarea cols="400" rows="5" className={styles.createFundDescriptionInput} />
-        // <div className={styles.createFundDescriptionInput}>
-        //     <p className={styles.createFundDescriptionInputText}>
-        //         {createFundDescriptionInputText}
-        //     </p>
-        // </div>
-    );
-};
+class CreateFundDescriptionInput extends React.Component {
+    constructor (props){
+        super(props);
+
+        this.state = {
+        };
+
+        this.onInput = this.onInput.bind(this);
+    }
+
+    onInput(e) {
+        this.props.parentObject.onDescriptionEdit(e.target.value);
+    }
+
+    render() {
+        return (
+            // <div className={styles.usernameInputBox}>
+            <textarea onChange={ this.onInput } cols="400" rows="5" className={styles.createFundDescriptionInput} />
+            // </div>
+        );
+    }
+}
 
 export default CreateFundDescriptionInput;

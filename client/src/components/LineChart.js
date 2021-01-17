@@ -8,8 +8,8 @@ class LineChart extends Component {
         super(props);
         this.state = {
             series: [{
-                name: "Desktops",
-                data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+                name: "% gain from start of fund",
+                data: [100, 98, 94, 101, 105, 106, 115, 125, 129]
             }],
             options: {
                 chart: {
@@ -42,7 +42,7 @@ class LineChart extends Component {
                     },
                 },
                 xaxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                    categories: ['Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
                 }
             },
         };

@@ -61,7 +61,7 @@ const createUsersWithFunds = async () => {
       apiKey: process.env.API_KEY,
       apiSecret: process.env.API_SECRET,
     },
-    freeCoin: 10000,
+    balance: 10000,
   });
 
   const user2 = new models.User({
@@ -70,7 +70,7 @@ const createUsersWithFunds = async () => {
       apiKey: 'test',
       secretKey: 'test'
     },
-    freeCoin: 10000,
+    balance: 10000,
   });
 
   const fund1 = new models.Fund({

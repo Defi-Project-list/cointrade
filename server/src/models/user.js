@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     apiKey: String,
     apiSecret: String
   },
-  freeCoin: Number, // USDT not tied to a fund
+  balance: Number, // USDT not tied to a fund
   funds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Fund' }],
 
 });

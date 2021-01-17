@@ -1,0 +1,25 @@
+@use "foundation";
+
+.logInButton {
+  background-color: foundation.$dark-grey-secondary;
+  border-radius: 5px;
+  padding: 5px 38px;
+  //display: inline-block;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+}
+.logInButton:hover {
+  background-color: foundation.$dark-grey-secondary-hover;
+}
+.logInButton:active {
+  position:relative;
+  top:1px;
+}
+.logInText {
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+  text-decoration: none;
+}

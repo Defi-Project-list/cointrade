@@ -1,0 +1,19 @@
+@use "foundation";
+
+.existingUser {
+  padding: 150px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.existingUsernameText {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$white-pure;
+  margin-bottom: 13px;
+}
+.usernameInputBox2 {
+  margin-bottom: 41px;
+}
+.continueButton {
+  margin-left: 98px;
+}

@@ -1,0 +1,24 @@
+@use "foundation";
+
+.newUser {
+  padding: 150px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newUsernameText {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$white-pure;
+  margin-bottom: 13px;
+}
+.usernameInputBox {
+  &:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+}
+.apiKeyInputBox {
+  margin-bottom: 36px;
+}
+.apiSecretKeyInputBox {
+  margin-bottom: 44px;
+}

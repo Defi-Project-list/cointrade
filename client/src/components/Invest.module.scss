@@ -1,0 +1,44 @@
+@use "foundation";
+
+.invest {
+  background-color: foundation.$white;
+  padding: 0 435px 63px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar {
+  margin-right: 46px;
+}
+.fundList {
+  background-color: foundation.$white;
+  //padding: 0 435px 63px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 0 0 32px;
+}
+.fundListRow {
+  background-color: foundation.$white;
+  //padding: 0 435px 63px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.tradeItems {
+  margin-top: 29px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.investTitle {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$almost-black;
+  text-align: center;
+  margin-bottom: 9px;
+}
+.investDescription {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  text-align: center;
+  margin-bottom: 59px;
+}

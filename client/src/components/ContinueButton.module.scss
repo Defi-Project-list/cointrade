@@ -1,0 +1,29 @@
+@use "foundation";
+
+.continueButton {
+  background-color: foundation.$dark-grey-secondary;
+  border-radius: 5px;
+  padding: 5px 31px;
+  //display: inline-block;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  margin-top: 10%;
+  margin-bottom: 25%;
+}
+.continueButton:hover {
+  background-color: foundation.$dark-grey-secondary-hover;
+}
+.continueButton:active {
+  position:relative;
+  top:1px;
+}
+
+.continueButtonText {
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}

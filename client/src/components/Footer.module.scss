@@ -1,0 +1,17 @@
+@use "foundation";
+
+.footer {
+  background-color: foundation.$dark-grey-secondary;
+  padding: 8px 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.footerText {
+  @include foundation.roboto-normal-regular-14;
+  color: foundation.$white-pure;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}

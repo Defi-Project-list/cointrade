@@ -1,0 +1,30 @@
+@use "foundation";
+
+.createFund2 {
+  background-color: foundation.$white;
+  padding: 0 233px 63px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar {
+  margin-right: 57px;
+}
+.flexWrapperOne {
+  padding: 37px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 32px;
+}
+.createFund2Title {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 14px;
+}
+.createFund2Subtitle {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  &:not(:last-of-type) {
+    margin-bottom: 26px;
+  }
+}

@@ -1,0 +1,23 @@
+@use "foundation";
+
+.nextButton {
+  background-color: foundation.$light-purple;
+  border-radius: 5px;
+  padding: 5px 38px;
+  //display: inline-block;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+}
+.nextButtonText {
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+}
+.nextButton:active {
+  position:relative;
+  top:1px;
+}

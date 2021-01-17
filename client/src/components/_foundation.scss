@@ -1,0 +1,88 @@
+// This is the project stylesheet
+
+// Colors
+$accent-100: rgba(234, 145, 141, 1);
+$black: rgba(0, 0, 0, 1);
+$dark-80: rgba(48, 70, 89, 0.8);
+$dark-grey-primary: rgba(56, 56, 56, 1);
+$dark-grey-secondary: rgba(22, 22, 21, 1);
+$light-blue: rgba(230, 241, 255, 1);
+$light-purple: rgba(178, 185, 255, 1);
+$medium-purple-2: rgba(155, 147, 254, 1);
+$opacity-25: rgba(0, 0, 0, 0.25);
+$purple-primary: rgba(155, 158, 243, 1);
+$white: rgba(255, 255, 255, 1);
+$dark-grey-secondary-hover: rgb(38, 38, 37);
+
+// Text colors
+$almost-black: rgba(22, 22, 21, 1);
+$gold: rgba(225, 149, 0, 1);
+$light-100: rgba(245, 249, 252, 1);
+$medium-grey: rgba(135, 135, 134, 1);
+$medium-grey-2: rgba(130, 130, 129, 1);
+$medium-purple: rgba(114, 106, 184, 1);
+$profit-green: rgba(11, 136, 0, 1);
+$text-black: rgba(0, 0, 0, 1);
+$white-pure: rgba(255, 255, 255, 1);
+
+// Typographies
+@mixin helvetica-bold {
+  font-family: "Helvetica";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}
+@mixin helvetica-regular {
+  font-family: "Helvetica";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+@mixin roboto-normal-medium {
+  font-family: "Roboto";
+  font-size: 64px;
+  font-weight: 500;
+  line-height: normal;
+}
+@mixin roboto-normal-medium-24 {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}
+@mixin roboto-normal-regular {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin roboto-normal-regular-14 {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin roboto-normal-regular-18 {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin roboto-normal-regular-24 {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin roboto-normal-regular-36 {
+  font-family: "Roboto";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin text-medium-text {
+  font-family: "Lato";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 25px;
+}

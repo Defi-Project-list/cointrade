@@ -5,6 +5,8 @@ const fundSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  description: String,
+  imageUrl: String,
   assets: {} ,
   users: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });

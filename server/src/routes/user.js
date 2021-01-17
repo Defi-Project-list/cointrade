@@ -30,7 +30,7 @@ router.get('/:username', async (req, res) => {
   const ret = {
     id: user.id,
     username: user.username,
-    wallet: user.wallet
+    freeCoin: user.freeCoin,
   }
   return res.send(ret);
 });
@@ -38,7 +38,7 @@ router.get('/:username', async (req, res) => {
 /*
  * Creates a user user
  * Query Params: None
- * POST /user/testuser1/create
+ * POST /user/testuser1/create?api-key=<apikey>&api-secret=<secretkey>
  */
 router.post('/:username/create', async (req, res) => {
   const user = new req.context.models.User({
@@ -91,7 +91,6 @@ router.post('/:username/invest', async (req, res) => {
   const user = await req.context.models.User.findOne({
     username: req.params.username,
   });
-  // FIXME: Change to fundId
   const fund = await req.context.models.Fund.findOne({name:fundName});
   console.log(user, user.binance)
   // Fail conditions, this could be a lot cleaner sorry
@@ -102,7 +101,7 @@ router.post('/:username/invest', async (req, res) => {
   } else if (!fund) {
     return res.status(400).send(`Fund ${req.query.fund} not found`);
   } else if (quantity > user.freeCoin) {
-    return res.status(400).send(`Not enough USDST in account`);
+    return res.status(400).send(`Not enough USDT in account`);
   }
 
   const binance = new Binance({

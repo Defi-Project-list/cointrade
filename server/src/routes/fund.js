@@ -5,7 +5,7 @@ const router = Router();
 /*
  * Gets all funds
  * Query Params: None
- * GET /user/
+ * GET /fund/
  */
 router.get('/', async (req, res) => {
   const funds = await req.context.models.Fund.find();
@@ -13,7 +13,9 @@ router.get('/', async (req, res) => {
   const ret = funds.map(fund => {
     return {
       id: fund.id,
-      name: fund.name
+      name: fund.name,
+      description: fund.description,
+      imageUrl: fund.imageUrl,
     }
   })
 
@@ -36,6 +38,8 @@ router.get('/:fundName', async (req, res) => {
     id: fund.id,
     name: fund.name,
     assets: fund.assets,
+    description: fund.description,
+    imageUrl: fund.imageUrl,
   }
   return res.send(ret);
 });
@@ -48,7 +52,9 @@ router.get('/:fundName', async (req, res) => {
 router.post('/:fundName/create', async (req, res) => {
   const fund = new req.context.models.Fund({
     name: req.params.fundName,
-    assets: req.body.assets
+    assets: req.body.assets,
+    description: req.body.description,
+    imageUrl: req.body.imageUrl,
   });
   try {
     await fund.save()

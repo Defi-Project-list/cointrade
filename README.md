@@ -1,6 +1,12 @@
 # cointrade
 A Hack the North 2020++ Project.
 
+<details>
+  <summary>Screenshots</summary><details>
+  <img src="static/funds" name="Fund List Page">
+  <img src="static/fundview" name="Individual Fund Page">
+</details>
+
 ## Inspiration
 If somebody tells you that cryptocurrency does not provide any value, they are wrong. For example, Stem Cell Coin combines AI and blockchain to address the healthcare sector. This means that cryptocurrency acts as an alternate form of a corporate stock: just like a company, a cryptocurrency provides some positive value to the world. Unfortunately, the amount of cryptocurrency funds in the financial industry is small, and most funds focus on investing in large market cap cryptos. Furthermore, these funds must be invested in by purchasing ETFs on a stock market through an expensive brokerage.
 

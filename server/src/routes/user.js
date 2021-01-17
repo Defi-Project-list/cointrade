@@ -3,11 +3,21 @@ import Binance from 'binance-api-node';
 
 const router = Router();
 
+/*
+ * Gets all users
+ * Query Params: None
+ * GET /user/
+ */
 router.get('/', async (req, res) => {
   const users = await req.context.models.User.find();
   return res.send(users);
 });
 
+/*
+ * Retrieves user info for one user
+ * Query Params: None
+ * GET /user/testuser1
+ */
 router.get('/:username', async (req, res) => {
 
   const user = await req.context.models.User.findOne({
@@ -25,7 +35,12 @@ router.get('/:username', async (req, res) => {
   return res.send(ret);
 });
 
-router.post('/:username', async (req, res) => {
+/*
+ * Creates a user user
+ * Query Params: None
+ * POST /user/testuser1/create
+ */
+router.post('/:username/create', async (req, res) => {
   const user = new req.context.models.User({
     username: req.params.username,
   });
@@ -37,6 +52,11 @@ router.post('/:username', async (req, res) => {
   }
 });
 
+/*
+ * Sets api key for one user
+ * Query Params: api-key, api-secret
+ * POST /user/testuser1/setkey?api-key=<apikey>&api-secret=<secretkey>
+ */
 router.post('/:username/setkey', async (req, res) => {
   const apiKey = req.query['api-key'];
   const apiSecret = req.query['api-secret'];
@@ -57,6 +77,12 @@ router.post('/:username/setkey', async (req, res) => {
   return res.send(user)
 });
 
+
+/*
+ * Invests in a fund
+ * Query Params: quantity, fund
+ * POST /user/testuser1/invest?quantity=100&fund=fund1
+ */
 router.post('/:username/invest', async (req, res) => {
   // Query Params
   const quantity = req.query.quantity;

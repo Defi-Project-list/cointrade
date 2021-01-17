@@ -2,6 +2,11 @@ import { Router } from 'express';
 
 const router = Router();
 
+/*
+ * Gets all funds
+ * Query Params: None
+ * GET /user/
+ */
 router.get('/', async (req, res) => {
   const funds = await req.context.models.Fund.find();
 
@@ -15,10 +20,15 @@ router.get('/', async (req, res) => {
   return res.send(ret);
 });
 
-router.get('/:fundId', async (req, res) => {
-  const fund = await req.context.models.Fund.findById(
-    req.params.fundId,
-  );
+/*
+ * Gets one fund info
+ * Query Params: None
+ * GET /fund/fund1
+ */
+router.get('/:fundName', async (req, res) => {
+  const fund = await req.context.models.Fund.findOne({
+    name: req.params.fundName,
+  });
   if (!fund) {
     return res.send(null)
   }
@@ -29,5 +39,24 @@ router.get('/:fundId', async (req, res) => {
   }
   return res.send(ret);
 });
+
+/*
+ * Creates a fund
+ * Query Params: None
+ * POST /fund/fund1/create
+ */
+router.post('/:fundName/create', async (req, res) => {
+  const fund = new req.context.models.Fund({
+    name: req.params.fundName,
+    assets: req.body.assets
+  });
+  try {
+    await fund.save()
+    return res.send(fund);
+  } catch (e) {
+    return res.status(400).send(e)
+  }
+});
+
 
 export default router;

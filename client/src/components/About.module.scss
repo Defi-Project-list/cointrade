@@ -1,0 +1,76 @@
+@use "foundation";
+
+.about {
+  background-color: foundation.$white;
+  padding: 0 148px 333px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flexWrapperOne {
+  margin-bottom: 17px;
+  padding: 0 0 29px;
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar {
+  margin-right: 46px;
+}
+.flexWrapperTwo {
+  padding: 42px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 32px;
+}
+.aboutHeader1 {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 20px;
+}
+.aboutParagraph1 {
+  width: 1023px;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  margin-bottom: 29px;
+  margin-left: 5px;
+}
+.aboutHeader2 {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 55px;
+}
+.aboutParagraph2 {
+  width: 1023px;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  margin-bottom: 83px;
+}
+.aboutHeader3 {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 10px;
+}
+.jerryXie {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$medium-purple;
+}
+.insertPictureHere2 {
+  margin-bottom: 17px;
+  margin-left: 264px;
+}
+.jerryXieParagraph1 {
+  width: 1023px;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  margin-left: 264px;
+  &:not(:last-of-type) {
+    margin-bottom: 17px;
+  }
+}
+.robertCiborowski {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$medium-purple;
+  margin-bottom: 17px;
+  margin-left: 264px;
+}

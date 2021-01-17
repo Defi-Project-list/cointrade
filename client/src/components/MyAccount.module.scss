@@ -1,0 +1,52 @@
+@use "foundation";
+
+.myAccount {
+  background-color: foundation.$white;
+  padding: 0 795px 63px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar {
+  margin-right: 36px;
+}
+.flexWrapperOne {
+  margin-left: 32px;
+  padding: 37px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flexWrapperOnePointFive {
+  margin-left: 32px;
+  padding: 37px 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.myAccountTitle {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 16px;
+}
+.myAccountProfitText1 {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+}
+.myAccountInvestmentTitle {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 16px;
+}
+.myAccountInvestmentTest1 {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  margin-bottom: 16px;
+}
+.myAccountProfitText2 {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$profit-green;
+  margin-top: 110px;
+}

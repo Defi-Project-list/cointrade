@@ -1,0 +1,38 @@
+@use "foundation";
+
+.howTo {
+  background-color: foundation.$white;
+  padding: 0 209px 1061px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar {
+  margin-right: 41px;
+  height: 200%;
+}
+.flexWrapperOne {
+  padding: 32px 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.howToTitle {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 32px;
+  margin-left: 5px;
+}
+.howToSubtitle {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-purple;
+  margin-bottom: 35px;
+  margin-left: 5px;
+}
+.howToFigure1 {
+  margin-bottom: 18px;
+}
+.howToFigure1Desc {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey-2;
+  margin-left: 119px;
+}

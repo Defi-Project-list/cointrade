@@ -1,0 +1,16 @@
+@use "foundation";
+
+.createFundDescriptionInput {
+  background-color: foundation.$light-blue;
+  border-radius: 5px;
+  padding: 13px 15px 130px 15px;
+  display: flex;
+  align-items: center;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey;
+  width: 50%;
+}
+.createFundDescriptionInputText {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey;
+}

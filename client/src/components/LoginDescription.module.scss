@@ -1,0 +1,85 @@
+@use "foundation";
+
+.loginDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+.flexWrapperFive {
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexWrapperFour {
+  margin-bottom: 8px;
+  padding: 8px;
+  position: relative;
+}
+.vector3 {
+  position: relative;
+}
+.vector1 {
+  position: absolute;
+  left: 44px;
+  top: 28px;
+}
+.section1Title {
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+}
+.section1Body {
+  width: 350px;
+  @include foundation.roboto-normal-regular-14;
+  color: foundation.$white-pure;
+  text-align: center;
+  position: relative;
+}
+.flexWrapperSix {
+  margin-right: 5%;
+  padding: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flexWrapperThree {
+  padding: 4px 12px 8px 8px;
+  display: flex;
+  align-items: flex-start;
+}
+.vector4 {
+  width: 76px;
+  height: 84px;
+}
+.section2Title {
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+}
+.flexWrapperSeven {
+  padding: 36px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 40px;
+}
+.vector6 {
+  margin-bottom: 10px;
+}
+.section3Header {
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+}
+.section3Body {
+  width: 350px;
+  @include foundation.roboto-normal-regular-14;
+  color: foundation.$white-pure;
+  text-align: center;
+  position: relative;
+}

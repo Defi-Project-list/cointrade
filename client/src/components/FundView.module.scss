@@ -1,0 +1,72 @@
+@use "foundation";
+
+.fundView {
+  background-color: foundation.$white;
+  padding: 0 8px 8px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar {
+  margin-right: 60px;
+}
+.flexWrapperOne {
+  padding: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 32px;
+}
+.fundViewTitle {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$text-black;
+  margin-bottom: 8px;
+}
+.fundViewProfits {
+  @include foundation.roboto-normal-regular-36;
+  color: foundation.$profit-green;
+  margin-bottom: 9px;
+}
+.flexWrapperTwo {
+  display: flex;
+  align-items: flex-start;
+}
+.fundViewUser {
+  @include foundation.roboto-normal-regular-18;
+  color: foundation.$text-black;
+  margin-right: 9px;
+}
+.fundViewLink {
+  @include foundation.roboto-normal-regular-18;
+  color: foundation.$medium-purple;
+  text-decoration: underline;
+}
+.fundViewPortfolio {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$gold;
+  margin-bottom: 16px;
+}
+.fundViewAmountInput {
+  margin-left: 9px;
+}
+.flexWrapperThree {
+  padding: 0 0 0 9px;
+  display: flex;
+  align-items: flex-start;
+}
+.fundViewBuyButton {
+  &:not(:last-of-type) {
+    margin-right: 41px;
+  }
+}
+.fundViewCurrentValue {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$text-black;
+  margin-bottom: 8px;
+  margin-left: 9px;
+}
+.fundViewParagraph {
+  width: 1114px;
+  @include foundation.roboto-normal-regular-18;
+  color: foundation.$text-black;
+  margin-left: 9px;
+}

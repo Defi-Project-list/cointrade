@@ -1,0 +1,19 @@
+@use "foundation";
+
+.websiteTitle {
+  //display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cointrade {
+  @include foundation.roboto-normal-medium;
+  color: foundation.$white-pure;
+  text-align: center;
+}
+.investInCryptocurrencyTheRightWay {
+  @include foundation.roboto-normal-medium-24;
+  color: foundation.$white-pure;
+}

@@ -1,0 +1,20 @@
+@use "foundation";
+
+.aboutButton {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid foundation.$white;
+  text-decoration: none;
+}
+.aboutButton:active {
+  position:relative;
+  top:1px;
+}
+.aboutButtonText {
+  width: 169px;
+  @include foundation.roboto-normal-regular;
+  color: foundation.$white-pure;
+  text-align: center;
+  text-decoration: none;
+}

@@ -1,0 +1,16 @@
+@use "foundation";
+
+.usernameInputBox2 {
+  background-color: foundation.$light-blue;
+  border-radius: 5px;
+  padding: 13px 237px 12px 15px;
+  display: flex;
+  align-items: center;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey;
+}
+.usernameInputText2 {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey;
+  padding: 13px 241px 12px 15px;
+}

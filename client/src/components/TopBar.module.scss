@@ -1,0 +1,24 @@
+@use "foundation";
+
+.topBar {
+  background-color: foundation.$purple-primary;
+  //padding: 9px 25px 9px 36px;
+  padding: 3px 0 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.cointradeLogoText {
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$white-pure;
+  margin-right: 80%;
+  cursor: pointer;
+  text-decoration: none;
+}
+.accountCircle {
+  padding: 4px 3px 3px 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

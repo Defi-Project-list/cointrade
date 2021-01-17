@@ -1,0 +1,18 @@
+@use "foundation";
+
+.fundViewAmountInput {
+  background-color: foundation.$light-blue;
+  border-radius: 5px;
+  padding: 13px 15px 12px 15px;
+  display: flex;
+  align-items: center;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey;
+  width: 50%;
+  margin-bottom: 32px;
+}
+.fundViewAmountInputText {
+  width: 211px;
+  @include foundation.roboto-normal-regular-24;
+  color: foundation.$medium-grey;
+}

@@ -1,17 +1,28 @@
 import React from "react";
 import styles from "./APIKeyInputBox.module.scss";
 
-const APIKeyInputBox = ({
-                            apiKeyInputText = "API Key"
-                        }) => {
-    return (
-        // <div className={styles.apiKeyInputBox}>
-        //     <p className={styles.apiKeyInputText}>
-        //         {apiKeyInputText}
-        //     </p>
-        // </div>
-        <input type="text" className={styles.apiKeyInputBox} />
-    );
-};
+class APIKeyInputBox extends React.Component {
+    constructor (props){
+        super(props);
+
+        this.state = {
+        };
+
+        this.onInput = this.onInput.bind(this);
+    }
+
+    onInput(e) {
+        this.props.parentObject.onUsernameEdit(e.target.value);
+    }
+
+    render() {
+        let apiKeyInputText = "API Key";
+        return (
+            // <div className={styles.usernameInputBox}>
+            <input onChange={ this.onInput } name="usernameInput" type="text" className={styles.apiKeyInputBox} />
+            // </div>
+        );
+    }
+}
 
 export default APIKeyInputBox;

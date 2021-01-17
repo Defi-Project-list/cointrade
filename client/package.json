@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.6.0",
     "apexcharts": "^3.23.1",
     "aws-amplify": "^3.3.14",
+    "axios": "^0.21.1",
     "canvasjs": "^1.8.3",
     "canvasjs-react-charts": "^1.0.4",
     "react": "^17.0.1",

@@ -14,6 +14,7 @@ const MyAccount = ({
                        myAccountInvestmentText2 = "Fund2: 150 USDT",
                        myAccountProfitText2 = "+5.22%"
                    }) => {
+    console.log(localStorage.getItem('user'));
     return (
         <div className={styles.myAccount}>
             <Sidebar className={styles.sidebar} />

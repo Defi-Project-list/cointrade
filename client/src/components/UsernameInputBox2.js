@@ -1,17 +1,27 @@
 import React from "react";
 import styles from "./UsernameInputBox2.module.scss";
 
-const UsernameInputBox2 = ({
-                               usernameInputText2 = "Username"
-                           }) => {
-    return (
-        // <div className={styles.usernameInputBox2}>
-        //     <p className={styles.usernameInputText2}>
-        //         {usernameInputText2}
-        //     </p>
-        // </div>
-        <input type="text" className={styles.usernameInputBox2} />
-    );
-};
+class UsernameInputBox2 extends React.Component {
+    constructor (props){
+        super(props);
 
+        this.state = {
+        };
+
+        this.onInput = this.onInput.bind(this);
+    }
+
+    onInput(e) {
+        this.props.parentObject.onUsernameEdit(e.target.value);
+    }
+
+    render() {
+        let usernameInputText = "Username";
+        return (
+            // <div className={styles.usernameInputBox}>
+            <input onChange={ this.onInput } name="usernameInput" type="text" className={styles.usernameInputBox2} />
+            // </div>
+        );
+    }
+}
 export default UsernameInputBox2;

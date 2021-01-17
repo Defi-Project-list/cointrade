@@ -2,7 +2,7 @@
 
 .myAccount {
   background-color: foundation.$white;
-  padding: 0 795px 63px 0;
+  padding: 0 0 32px 0;
   display: flex;
   align-items: flex-start;
 }
@@ -26,27 +26,26 @@
 .myAccountTitle {
   @include foundation.roboto-normal-regular-36;
   color: foundation.$text-black;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .myAccountProfitText1 {
   @include foundation.roboto-normal-regular-24;
   color: foundation.$text-black;
   &:not(:last-of-type) {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 }
 .myAccountInvestmentTitle {
   @include foundation.roboto-normal-regular-36;
   color: foundation.$text-black;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .myAccountInvestmentTest1 {
   @include foundation.roboto-normal-regular-24;
   color: foundation.$text-black;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .myAccountProfitText2 {
   @include foundation.roboto-normal-regular-36;
   color: foundation.$profit-green;
-  margin-top: 110px;
 }
